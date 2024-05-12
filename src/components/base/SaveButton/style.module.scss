@@ -1,0 +1,34 @@
+@import "../../../styles/variables";
+
+.save {
+  margin-bottom: 40px;
+  position: relative ;
+
+  button {
+    border-radius: 5px;
+    width: 80px;
+    height: 30px;
+    outline: none;
+    border: none;
+    color: grey;
+    background-color: #fff;
+    box-shadow: 1px 1px 1px 1px #47474754;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+    &:active {
+      transform: translate(1px, 1px);
+      box-shadow: none;
+    }
+  }
+
+  &:hover {
+    button {
+      font-weight: 500;
+      box-shadow: 1px 1px 1px 2px #47474754;
+      transform: translate(-1px, -1px);
+    }
+  }
+}

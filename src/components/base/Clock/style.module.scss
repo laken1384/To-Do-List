@@ -1,0 +1,36 @@
+@import url("https://fonts.googleapis.com/css2?family=Saira:wght@400&display=swap");
+
+.clock {
+  background-color: #dddddd93;
+  color: #2f363f;
+  width: 300px;
+  height: 120px;
+  padding: 10px 0;
+  font: {
+    family: "Saira", sans-serif;
+    weight: 400;
+  }
+
+  border-radius: 5px;
+  position: relative;
+  box-shadow: -1px -1px 2px 2px #d9d9d9ca inset;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  .date {
+    font-size: 24px;
+  }
+
+  .time {
+    font-size: 48px;
+
+    .alarm-icon {
+      position: absolute;
+      font-size: 25px;
+      left: 15px;
+      bottom: 25px;
+    }
+  }
+}

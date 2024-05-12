@@ -1,0 +1,111 @@
+@import "../../../styles/mixins";
+@import "../../../styles/variables";
+
+.panel {
+  width: 300px;
+  margin: 10px 10px ;
+  font-weight: 400;
+  .header {
+    color: #ffffff;
+    font-weight: 500;
+    border-radius: 5px 5px 0 0;
+    height: 50px;
+    padding: 0 30px;
+    @include flex-between;
+
+    .actions {
+      @include flex-between;
+      width: 50px;
+      .btn:hover {
+        cursor: pointer;
+      }
+      &.hidden {
+        display: none;
+      }
+    }
+    input {
+      height: 26px;
+      width: 200px;
+    }
+  }
+  .body {
+    height: 360px;
+    width: 300px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    padding-top: 16px;
+    margin-top: -1px;
+    overflow: scroll;
+    overflow-x: hidden;
+    &::-webkit-scrollbar {
+      display: none;
+    }
+    scrollbar-width: none;
+  }
+
+  .add-item {
+    margin-top: -1px;
+    border-radius: 0px 0px 5px 5px;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+
+    input {
+      width: 200px;
+      height: 26px;
+      &:hover {
+        cursor: pointer;
+      }
+      &:hover:focus {
+        color: inherit;
+        cursor: text;
+      }
+    }
+  }
+}
+
+$types: (
+  red: (
+    header-background: $color-red,
+    body-background: $color-red-light,
+    hover-background: $color-red-hover,
+  ),
+  yellow: (
+    header-background: $color-yellow,
+    body-background: $color-yellow-light,
+    hover-background: $color-yellow-hover,
+  ),
+  green: (
+    header-background: $color-green,
+    body-background: $color-green-light,
+    hover-background: $color-green-hover,
+  ),
+);
+
+@each $status, $styles in $types {
+  .#{$status} {
+    .header {
+      background-color: map-get($styles, header-background);
+      .actions {
+        color: map-get($styles, body-background);
+      }
+    }
+    .body {
+      background-color: map-get($styles, body-background);
+    }
+    .add-item {
+      background-color: map-get($styles, body-background);
+      input {
+        background-color: map-get($styles, body-background);
+        &:hover {
+          color: map-get($styles, header-background);
+        }
+        &:focus {
+          border-bottom: 1px solid map-get($styles, header-background);
+        }
+      }
+    }
+  }
+}

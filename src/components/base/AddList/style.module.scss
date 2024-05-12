@@ -1,0 +1,25 @@
+@import "../../../styles/mixins";
+
+.add-list {
+  min-width: 200px;
+  @include flex-center;
+  flex-wrap: wrap;
+
+  input {
+    background-color: rgba(211, 211, 211, 0.37);
+    border-radius: 5px;
+    color: #ffffff;
+    height: 30px;
+    width: 160px;
+    padding: 10px 14px;
+    margin: 0 10px;
+    &:focus {
+      background-color: #ffffff;
+      color: #2f363f;
+    }
+  }
+
+  .color-picker {
+    padding: 20px 10px;
+  }
+}

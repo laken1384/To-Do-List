@@ -1,0 +1,10 @@
+.toast.MuiSnackbar-root{
+  position: absolute ;
+  bottom: -60px;
+}
+
+.MuiSnackbarContent-root{
+  display: flex;
+  justify-content: center;
+  min-width: 200px;
+}

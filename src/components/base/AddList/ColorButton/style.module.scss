@@ -1,0 +1,35 @@
+@import '../../../../styles//variables';
+
+.color-button{
+    border-radius: 10px;
+    border: none;
+    width: 16px;
+    height: 16px;
+    margin: 0 8px;
+    cursor: pointer;
+
+}
+
+$types: (
+    red: (
+        button-color: $color-red,
+        hover-color: $color-red-light,
+    ),
+    yellow: (
+        button-color: $color-yellow,
+        hover-color: $color-yellow-light,
+    ),
+    green: (
+        button-color: $color-green,
+        hover-color: $color-green-light,
+    )
+);
+
+@each $color, $styles in $types{
+    .#{$color} {
+        background-color: map-get($styles, button-color);
+        &.active, &:hover{
+            box-shadow: 0px 0px 0px 1px map-get($styles, hover-color);
+        }
+    }
+}
